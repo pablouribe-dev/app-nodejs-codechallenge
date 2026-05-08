@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import { PrismaModule } from './prisma/prisma.module.js';
-import { TransactionModule } from './transaction/transaction.module.js';
+import { AntiFraudService } from './anti-fraud.service.js';
 
 @Module({
   imports: [
@@ -9,8 +8,7 @@ import { TransactionModule } from './transaction/transaction.module.js';
       isGlobal: true,
       envFilePath: ['.env', '.env.local'],
     }),
-    PrismaModule,
-    TransactionModule,
   ],
+  providers: [AntiFraudService],
 })
-export class AppModule {}
+export class AntiFraudModule {}

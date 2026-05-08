@@ -44,18 +44,17 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Run tests
+## Run the challenge stack
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+docker compose up -d
+npx prisma migrate deploy
+npm run start:dev
+# separate terminal:
+npm run start:anti-fraud:dev
 ```
+
+OpenAPI UI: http://localhost:3000/api
 
 ## Deployment
 
